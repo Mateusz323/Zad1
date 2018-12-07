@@ -28,7 +28,7 @@ public class Main {
       }
       rs = null;  
       if(!baseExist){
-      	System.out.println("Creating Table");
+      	System.out.println("Creating table");
       	stmt = conn.createStatement();
       	sql = "CREATE TABLE Info (PersonID int, LastName varchar(255), FirstName varchar(255))";
       	stmt.executeUpdate(sql);
@@ -36,7 +36,7 @@ public class Main {
       }
 	   
       stmt = conn.createStatement();
-      System.out.println("Inserting Data to Table");
+      System.out.println("Inserting data to table");
       sql = "INSERT INTO Info (PersonID, LastName, FirstName) VALUES (1, 'Mateusz', 'Chwalczuk')";
       stmt.executeUpdate(sql);	 
       stmt = null;
@@ -50,7 +50,7 @@ public class Main {
          String firstName = rs.getString("FirstName");
          String lastName = rs.getString("LastName");
 
-	 System.out.println("Load informations from Database");
+	 System.out.println("Load informations from database");
          System.out.println("ID: " + id);
          System.out.println("First name: " + firstName);
          System.out.println("Last name: " + lastName);
