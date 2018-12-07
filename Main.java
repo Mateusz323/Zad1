@@ -37,7 +37,7 @@ public class Main {
 	   
       stmt = conn.createStatement();
       System.out.println("Inserting Data to Table");
-      sql = "INSERT INTO Info (PersonID, LastName, FirstName) VALUES (1, 'Mateusz', 'Chwalczuk');
+      sql = "INSERT INTO Info (PersonID, LastName, FirstName) VALUES (1, 'Mateusz', 'Chwalczuk')";
       stmt.executeUpdate(sql);	 
       stmt = null;
 	   
