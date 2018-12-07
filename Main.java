@@ -10,7 +10,6 @@ public class Main {
    public static void main(String[] args) {
    Connection conn = null;
    Statement stmt = null;
-   Boolean baseExist = false;
    String sql;
   
    try{
@@ -19,25 +18,15 @@ public class Main {
       System.out.println("Connecting to database...");
       conn = DriverManager.getConnection(DB_URL,USER,PASS);	   
       	   
-      System.out.println("Check if table in base exist");
-      DatabaseMetaData md = conn.getMetaData();
-      ResultSet rs = md.getTables(null, null, "Info", null);
-      while (rs.next()) {
-            System.out.println("Table Exist");
-	    baseExist = true;
-      }
-      rs = null;  
-      if(!baseExist){
-      	System.out.println("Creating table");
-      	stmt = conn.createStatement();
-      	sql = "CREATE TABLE Info (PersonID int, LastName varchar(255), FirstName varchar(255))";
-      	stmt.executeUpdate(sql);
-      	stmt = null;
-      }
+	System.out.println("Creating table");
+	stmt = conn.createStatement();
+	sql = "CREATE TABLE Info (PersonID int, LastName varchar(255), FirstName varchar(255))";
+	stmt.executeUpdate(sql);
+	stmt = null; 
 	   
       stmt = conn.createStatement();
       System.out.println("Inserting data to table");
-      sql = "INSERT INTO Info (PersonID, LastName, FirstName) VALUES (1, 'Mateusz', 'Chwalczuk')";
+      sql = "INSERT INTO Info (PersonID, LastName, FirstName) VALUES (1, 'Chwalczuk', 'Mateusz')";
       stmt.executeUpdate(sql);	 
       stmt = null;
 	   
