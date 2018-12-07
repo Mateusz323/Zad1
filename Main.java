@@ -50,9 +50,10 @@ public class Main {
          String firstName = rs.getString("FirstName");
          String lastName = rs.getString("LastName");
 
+	 System.out.println("Load informations from Database");
          System.out.println("ID: " + id);
-         System.out.println(", First name: " + firstName);
-         System.out.println(", Last name: " + lastName);
+         System.out.println("First name: " + firstName);
+         System.out.println("Last name: " + lastName);
       }
       rs.close();
       stmt.close();
